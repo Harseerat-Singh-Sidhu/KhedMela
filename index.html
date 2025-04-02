@@ -72,47 +72,47 @@
             <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
 
                 <div class="bg-slate-800/80 backdrop-blur-sm rounded-xl shadow-lg overflow-hidden transition-all duration-300 ease-in-out hover:shadow-xl hover:shadow-sky-900/30 hover:-translate-y-1 border border-slate-700 hover:border-slate-600">
-                    <img src="https://placehold.co/600x400/3498db/ffffff?text=Game+1+Screenshot"
-                         alt="Game 1 Screenshot Placeholder"
+                    <img src="https://placehold.co/600x400/3498db/ffffff?text=Chidiya+Udd"
+                         alt="Chidiya Udd Game Screenshot"
                          class="w-full h-52 object-cover" onerror="this.onerror=null; this.src='https://placehold.co/600x400/555555/aaaaaa?text=Image+Error';" >
                     <div class="p-6">
-                        <h2 class="text-2xl font-semibold mb-2 text-gray-100">Game Title 1</h2>
+                        <h2 class="text-2xl font-semibold mb-2 text-gray-100">Chidiya Udd</h2>
                         <p class="text-gray-400 mb-5 text-sm leading-relaxed">
-                            A short, engaging description of your first game. Explain the main objective or gameplay.
+                           Classic "Fly the Bird" reaction game. How quick are your fingers?
                         </p>
-                        <a href="https://harseerat-singh-sidhu.github.io/GeminiPong" target="_blank" rel="noopener noreferrer"
+                        <a href="https://harseerat-singh-sidhu.github.io/ChidiyaUdd" target="_blank" rel="noopener noreferrer"
                            class="inline-flex items-center justify-center w-full px-5 py-2.5 bg-gradient-to-r from-blue-600 to-blue-800 text-white font-medium rounded-lg shadow-md hover:from-blue-700 hover:to-blue-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-slate-800 focus:ring-blue-500 transition-all duration-200 transform hover:scale-105">
                            Play Now
                            <span class="lucide ml-2 text-base">&#xe345;</span> </a>
                     </div>
                 </div>
                 <div class="bg-slate-800/80 backdrop-blur-sm rounded-xl shadow-lg overflow-hidden transition-all duration-300 ease-in-out hover:shadow-xl hover:shadow-teal-900/30 hover:-translate-y-1 border border-slate-700 hover:border-slate-600">
-                    <img src="https://placehold.co/600x400/2ecc71/ffffff?text=Game+2+Screenshot"
-                         alt="Game 2 Screenshot Placeholder"
+                     <img src="https://placehold.co/600x400/2ecc71/ffffff?text=Brick+Breaker"
+                         alt="Brick Breaker Game Screenshot"
                          class="w-full h-52 object-cover"
                          onerror="this.onerror=null; this.src='https://placehold.co/600x400/555555/aaaaaa?text=Image+Error';"
                     >
                     <div class="p-6">
-                        <h2 class="text-2xl font-semibold mb-2 text-gray-100">Game Title 2</h2>
+                        <h2 class="text-2xl font-semibold mb-2 text-gray-100">Brick Breaker</h2>
                         <p class="text-gray-400 mb-5 text-sm leading-relaxed">
-                            Describe your second amazing game here. What makes it fun?
+                            Clear the screen by breaking all the bricks with the bouncing ball!
                         </p>
-                        <a href="https://harseerat-singh-sidhu.github.io/GeminiPong" target="_blank" rel="noopener noreferrer"
+                        <a href="https://harseerat-singh-sidhu.github.io/BrickBreaker" target="_blank" rel="noopener noreferrer"
                            class="inline-flex items-center justify-center w-full px-5 py-2.5 bg-gradient-to-r from-green-600 to-green-800 text-white font-medium rounded-lg shadow-md hover:from-green-700 hover:to-green-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-slate-800 focus:ring-green-500 transition-all duration-200 transform hover:scale-105">
                            Play Now
                            <span class="lucide ml-2 text-base">&#xe345;</span> </a>
                     </div>
                 </div>
                 <div class="bg-slate-800/80 backdrop-blur-sm rounded-xl shadow-lg overflow-hidden transition-all duration-300 ease-in-out hover:shadow-xl hover:shadow-rose-900/30 hover:-translate-y-1 border border-slate-700 hover:border-slate-600">
-                     <img src="https://placehold.co/600x400/e74c3c/ffffff?text=Game+3+Screenshot"
-                         alt="Game 3 Screenshot Placeholder"
+                     <img src="https://placehold.co/600x400/e74c3c/ffffff?text=Gemini+Pong"
+                         alt="Gemini Pong Game Screenshot"
                          class="w-full h-52 object-cover"
                          onerror="this.onerror=null; this.src='https://placehold.co/600x400/555555/aaaaaa?text=Image+Error';"
                     >
                     <div class="p-6">
-                        <h2 class="text-2xl font-semibold mb-2 text-gray-100">Game Title 3</h2>
+                        <h2 class="text-2xl font-semibold mb-2 text-gray-100">Gemini Pong</h2>
                         <p class="text-gray-400 mb-5 text-sm leading-relaxed">
-                            Another fantastic game description goes here. Keep it concise!
+                            Experience the classic retro table tennis game. Can you beat the AI?
                         </p>
                         <a href="https://harseerat-singh-sidhu.github.io/GeminiPong" target="_blank" rel="noopener noreferrer"
                            class="inline-flex items-center justify-center w-full px-5 py-2.5 bg-gradient-to-r from-red-600 to-red-800 text-white font-medium rounded-lg shadow-md hover:from-red-700 hover:to-red-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-slate-800 focus:ring-red-500 transition-all duration-200 transform hover:scale-105">
@@ -134,110 +134,138 @@
 
         // --- three.js Background Animation ---
         window.onload = function() {
+            // Check if THREE is loaded correctly
+            if (typeof THREE === 'undefined') {
+                console.error('three.js failed to load. Background animation disabled.');
+                // Optionally hide the canvas or display a fallback
+                const canvas = document.getElementById('bg-canvas');
+                if(canvas) canvas.style.display = 'none';
+                return; // Exit if three.js is not available
+            }
+
             let scene, camera, renderer, shapes = [];
             let mouseX = 0, mouseY = 0;
-            const windowHalfX = window.innerWidth / 2;
-            const windowHalfY = window.innerHeight / 2;
+            let windowHalfX = window.innerWidth / 2;
+            let windowHalfY = window.innerHeight / 2;
 
             // Initialization
             function init() {
-                // Scene
-                scene = new THREE.Scene();
-                // Fog for depth effect (optional)
-                scene.fog = new THREE.FogExp2(0x0a0a1a, 0.0015); // Dark blueish fog
+                try {
+                    // Scene
+                    scene = new THREE.Scene();
+                    scene.fog = new THREE.FogExp2(0x0a0a1a, 0.0015); // Dark blueish fog
 
-                // Camera
-                camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-                camera.position.z = 50; // Start further back
+                    // Camera
+                    camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+                    camera.position.z = 50;
 
-                // Renderer
-                const canvas = document.getElementById('bg-canvas');
-                renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true, alpha: true }); // Use alpha for potential transparency
-                renderer.setSize(window.innerWidth, window.innerHeight);
-                renderer.setPixelRatio(window.devicePixelRatio); // Adjust for high-res displays
-                // We don't appendChild as we are using an existing canvas
+                    // Renderer
+                    const canvas = document.getElementById('bg-canvas');
+                    if (!canvas) {
+                        console.error('Canvas element #bg-canvas not found.');
+                        return; // Exit if canvas isn't found
+                    }
+                    renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true, alpha: true });
+                    renderer.setSize(window.innerWidth, window.innerHeight);
+                    renderer.setPixelRatio(window.devicePixelRatio);
 
-                // Shapes (e.g., Icosahedrons)
-                const geometry = new THREE.IcosahedronGeometry(5, 0); // Radius 5, detail 0
-                // Use a slightly emissive material for visibility in dark theme
-                const material = new THREE.MeshStandardMaterial({
-                    color: 0x60a5fa, // Light blue color (Tailwind blue-400)
-                    roughness: 0.5,
-                    metalness: 0.1,
-                    emissive: 0x1e40af, // Darker blue emissive (Tailwind blue-800)
-                    emissiveIntensity: 0.2
-                 });
+                    // Shapes
+                    const geometry = new THREE.IcosahedronGeometry(5, 0);
+                    const material = new THREE.MeshStandardMaterial({
+                        color: 0x60a5fa,
+                        roughness: 0.5,
+                        metalness: 0.1,
+                        emissive: 0x1e40af,
+                        emissiveIntensity: 0.2
+                     });
 
-                const shapeCount = 50; // Number of shapes
-                for (let i = 0; i < shapeCount; i++) {
-                    const mesh = new THREE.Mesh(geometry, material);
+                    const shapeCount = 50;
+                    for (let i = 0; i < shapeCount; i++) {
+                        const mesh = new THREE.Mesh(geometry, material);
+                        mesh.position.x = (Math.random() - 0.5) * 1000;
+                        mesh.position.y = (Math.random() - 0.5) * 1000;
+                        mesh.position.z = (Math.random() - 0.5) * 1000;
+                        mesh.rotation.x = Math.random() * 2 * Math.PI;
+                        mesh.rotation.y = Math.random() * 2 * Math.PI;
+                        mesh.rotation.z = Math.random() * 2 * Math.PI;
+                        const scale = Math.random() * 0.5 + 0.5;
+                        mesh.scale.set(scale, scale, scale);
+                        scene.add(mesh);
+                        shapes.push(mesh);
+                    }
 
-                    // Random positions within a large volume
-                    mesh.position.x = (Math.random() - 0.5) * 1000;
-                    mesh.position.y = (Math.random() - 0.5) * 1000;
-                    mesh.position.z = (Math.random() - 0.5) * 1000;
+                    // Lighting
+                    const ambientLight = new THREE.AmbientLight(0xffffff, 0.2);
+                    scene.add(ambientLight);
+                    const directionalLight = new THREE.DirectionalLight(0xffffff, 0.5);
+                    directionalLight.position.set(1, 1, 1);
+                    scene.add(directionalLight);
 
-                    // Random rotations
-                    mesh.rotation.x = Math.random() * 2 * Math.PI;
-                    mesh.rotation.y = Math.random() * 2 * Math.PI;
-                    mesh.rotation.z = Math.random() * 2 * Math.PI;
+                    // Event Listeners
+                    document.addEventListener('mousemove', onDocumentMouseMove, false);
+                    window.addEventListener('resize', onWindowResize, false);
 
-                    // Random scales
-                    const scale = Math.random() * 0.5 + 0.5; // Scale between 0.5 and 1.0
-                    mesh.scale.set(scale, scale, scale);
-
-                    scene.add(mesh);
-                    shapes.push(mesh);
+                } catch (error) {
+                    console.error("Error initializing three.js scene:", error);
+                    const canvas = document.getElementById('bg-canvas');
+                    if(canvas) canvas.style.display = 'none'; // Hide canvas on error
                 }
-
-                // Basic Lighting (needed for MeshStandardMaterial)
-                const ambientLight = new THREE.AmbientLight(0xffffff, 0.2); // Soft white light
-                scene.add(ambientLight);
-                const directionalLight = new THREE.DirectionalLight(0xffffff, 0.5);
-                directionalLight.position.set(1, 1, 1);
-                scene.add(directionalLight);
-
-
-                // Event Listeners
-                document.addEventListener('mousemove', onDocumentMouseMove, false);
-                window.addEventListener('resize', onWindowResize, false);
             }
 
             // Mouse Move Handler
             function onDocumentMouseMove(event) {
-                mouseX = (event.clientX - windowHalfX) / 5; // Divide for less drastic movement
+                mouseX = (event.clientX - windowHalfX) / 5;
                 mouseY = (event.clientY - windowHalfY) / 5;
             }
 
             // Window Resize Handler
             function onWindowResize() {
-                camera.aspect = window.innerWidth / window.innerHeight;
-                camera.updateProjectionMatrix();
-                renderer.setSize(window.innerWidth, window.innerHeight);
+                // Update window half dimensions
+                windowHalfX = window.innerWidth / 2;
+                windowHalfY = window.innerHeight / 2;
+
+                // Update camera and renderer if they exist
+                if (camera && renderer) {
+                    camera.aspect = window.innerWidth / window.innerHeight;
+                    camera.updateProjectionMatrix();
+                    renderer.setSize(window.innerWidth, window.innerHeight);
+                }
             }
 
             // Animation Loop
             function animate() {
+                // Ensure animation stops if renderer wasn't created
+                if (!renderer) return;
+
                 requestAnimationFrame(animate);
 
-                // Subtle camera movement based on mouse position
-                camera.position.x += (mouseX - camera.position.x) * 0.005; // Smooth interpolation
-                camera.position.y += (-mouseY - camera.position.y) * 0.005; // Invert Y
-                camera.lookAt(scene.position); // Keep camera focused on the center
+                // Only update camera if it exists
+                if (camera && scene) {
+                    camera.position.x += (mouseX - camera.position.x) * 0.005;
+                    camera.position.y += (-mouseY - camera.position.y) * 0.005;
+                    camera.lookAt(scene.position);
+                }
+
 
                 // Rotate shapes
-                const time = Date.now() * 0.0001; // Slow down rotation speed
+                const time = Date.now() * 0.0001;
                 shapes.forEach((shape, i) => {
-                    shape.rotation.x += 0.001 + i * 0.00001; // Slightly different speeds
+                    shape.rotation.x += 0.001 + i * 0.00001;
                     shape.rotation.y += 0.002 + i * 0.00001;
                 });
 
-                renderer.render(scene, camera);
+                // Render scene if renderer and scene exist
+                if (renderer && scene && camera) {
+                    renderer.render(scene, camera);
+                }
             }
 
             // Start everything
             init();
-            animate();
+            // Only start animation if initialization didn't fail
+            if (renderer && scene && camera) {
+                 animate();
+            }
         };
 
     </script>
